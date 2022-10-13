@@ -1,0 +1,125 @@
+#N canvas 12 135 939 726 12;
+#X text 34 13 basic 2 operator FM;
+#X obj 410 547 dac~;
+#X obj 415 523 *~;
+#X obj 449 525 / 127;
+#X floatatom 494 525 5 0 0 0 - - -;
+#X obj 76 362 osc~;
+#X obj 75 282 mtof;
+#X obj 75 307 line 300;
+#X obj 194 382 osc~;
+#X obj 193 328 +;
+#X obj 75 336 +~;
+#X obj 195 417 *~;
+#X floatatom 271 441 5 0 0 0 - - -;
+#X floatatom 113 284 5 0 0 0 - - -;
+#X obj 226 441 * 10;
+#X obj 193 274 - 63;
+#X obj 193 298 t b f;
+#X obj 193 352 mtof;
+#X floatatom 230 352 5 0 0 0 - - -;
+#X obj 325 510 *~;
+#X text 460 503 master;
+#X obj 124 337 *~;
+#X obj 44 63 hsl 60 30 0 127 0 0 empty empty Tune -2 -8 0 10 -262144
+-1 -1 2300 1;
+#X obj 134 63 hsl 60 30 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 44 123 hsl 60 30 0 127 0 0 empty empty Mod_Tune -2 -8 0 10 -262144
+-1 -1 2700 1;
+#X obj 134 123 hsl 60 30 0 127 0 0 empty empty Index -2 -8 0 10 -262144
+-1 -1 2600 1;
+#X obj 224 63 hsl 60 30 0 127 0 0 empty empty LFO1_Vol -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 314 63 hsl 60 30 0 127 0 0 empty empty LFO2_Vol -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 224 123 hsl 60 30 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 314 123 hsl 60 30 0 127 0 0 empty empty Volume -2 -8 0 10 -262144
+-1 -1 1600 1;
+#X obj 354 472 max~ 0;
+#X text 312 542 amps stage;
+#X obj 474 467 hsl 60 30 -1 1.5 0 0 empty empty offset -2 -8 0 10 -262144
+-1 -1 2760 1;
+#X obj 427 477 +~;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-see01 100 float 3;
+#A 0 0.888681 0.872254 0.854771 0.836251 0.816717 0.796187 0.774678
+0.752231 0.728876 0.704641 0.67956 0.653659 0.626966 0.599529 0.571384
+0.542569 0.513121 0.483075 0.45247 0.421355 0.38977 0.357758 0.325362
+0.292615 0.259571 0.226272 0.192763 0.159086 0.125281 0.0913961 0.0574745
+0.0235582 -0.0103107 -0.0440894 -0.0777366 -0.111213 -0.144475 -0.177484
+-0.210205 -0.242601 -0.274625 -0.306253 -0.337452 -0.368174 -0.3984
+-0.428102 -0.457233 -0.485781 -0.513722 -0.541007 -0.567639 -0.59358
+-0.61881 -0.643325 -0.667074 -0.690081 -0.712289 -0.733723 -0.754338
+-0.77415 -0.793126 -0.811283 -0.828584 -0.845063 -0.860666 -0.875442
+-0.889349 -0.902411 -0.914631 -0.925982 -0.936508 -0.946189 -0.955026
+-0.963051 -0.970258 -0.976638 -0.982229 -0.98704 -0.991067 -0.994318
+-0.996824 -0.998598 -0.999653 -0.999998 -0.999636 -0.9986 -0.996908
+-0.994574 -0.991615 -0.988049 -0.983893 -0.979165 -0.973884 -0.968067
+-0.961735 -0.954906 -0.947598 -0.939833 -0.931628 -0.923004;
+#X coords 0 1 100 -1 200 140 1 0 0;
+#X restore 658 396 graph;
+#X obj 658 331 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 658 351 tabwrite~ \$0-see01;
+#X obj 704 256 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 531 67 LFO mixer;
+#X text 80 261 carrier;
+#X text 188 253 modulator;
+#X text 229 419 index;
+#X obj 505 99 LFOSequencer_Mixer-Test;
+#X obj 465 285 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2200 1;
+#X obj 462 305 / 127;
+#X obj 446 336 *~;
+#X msg 548 450 0;
+#X obj 552 427 loadbang;
+#X obj 338 209 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4700 1;
+#X obj 335 229 / 127;
+#X obj 319 260 *~;
+#X obj 700 287 metro 100;
+#X connect 2 0 1 0;
+#X connect 2 0 1 1;
+#X connect 3 0 4 0;
+#X connect 3 0 2 1;
+#X connect 5 0 19 0;
+#X connect 5 0 36 0;
+#X connect 6 0 7 0;
+#X connect 6 0 13 0;
+#X connect 7 0 10 1;
+#X connect 8 0 11 0;
+#X connect 9 0 17 0;
+#X connect 10 0 5 0;
+#X connect 11 0 21 0;
+#X connect 14 0 12 0;
+#X connect 14 0 11 1;
+#X connect 15 0 16 0;
+#X connect 16 0 9 0;
+#X connect 16 1 9 1;
+#X connect 17 0 8 0;
+#X connect 17 0 18 0;
+#X connect 19 0 2 0;
+#X connect 21 0 10 0;
+#X connect 22 0 6 0;
+#X connect 22 0 9 0;
+#X connect 24 0 15 0;
+#X connect 25 0 14 0;
+#X connect 29 0 3 0;
+#X connect 30 0 19 1;
+#X connect 32 0 33 1;
+#X connect 33 0 30 0;
+#X connect 35 0 36 0;
+#X connect 37 0 51 0;
+#X connect 42 0 50 0;
+#X connect 43 0 44 0;
+#X connect 44 0 45 1;
+#X connect 45 0 33 0;
+#X connect 46 0 32 0;
+#X connect 47 0 46 0;
+#X connect 48 0 49 0;
+#X connect 49 0 50 1;
+#X connect 50 0 21 1;
+#X connect 51 0 36 0;

@@ -1,0 +1,10 @@
+#N canvas 1482 509 382 120 12;
+#X obj 22 24 ctlin 1 1;
+#X obj 102 24 ctlin 2 1;
+#X obj 182 24 ctlin 3 1;
+#X obj 262 24 ctlin 4 1;
+#X obj 22 54 ctlin 5 1;
+#X obj 102 54 ctlin 6 1;
+#X obj 182 54 ctlin 7 1;
+#X obj 262 54 ctlin 8 1;
+#X text 24 88 up for grabs;
