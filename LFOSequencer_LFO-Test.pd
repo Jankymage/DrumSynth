@@ -1,4 +1,4 @@
-#N canvas 1072 115 761 797 12;
+#N canvas 304 118 761 797 12;
 #X text 691 630 LFO out;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-waveShape 67 float 5;

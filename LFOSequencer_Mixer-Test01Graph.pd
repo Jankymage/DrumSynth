@@ -5979,11 +5979,11 @@
 #X obj 73 91 bng 30 250 50 0 empty empty wave 0 -8 0 10 -262130 -1
 -1;
 #X obj 112 91 hsl 60 30 0 127 0 0 empty empty subdivition -2 -8 0 10
--262130 -1 -1 4227 1;
+-262130 -1 -1 2927 1;
 #X obj 186 91 hsl 60 30 0 127 0 0 empty empty phase -2 -8 0 10 -262130
--1 -1 2400 1;
+-1 -1 0 1;
 #X obj 263 91 hsl 60 30 0 127 0 0 empty empty volume -2 -8 0 10 -228856
--1 -1 2400 1;
+-1 -1 0 1;
 #X obj 786 675 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 786 695 tabwrite~ \$0-see08, f 9;
@@ -47849,7 +47849,7 @@
 #X obj 398 507 / 127;
 #X obj 367 506 *~;
 #X obj 263 141 hsl 60 30 0 127 0 0 empty empty volume -2 -8 0 10 -228856
--1 -1 1700 1;
+-1 -1 0 1;
 #X obj 177 623 LFOSequencer_LFO-Test;
 #X obj 400 564 / 127;
 #X obj 369 563 *~;
@@ -47863,19 +47863,19 @@
 #X obj 73 141 bng 30 250 50 0 empty empty wave 0 -8 0 10 -262130 -1
 -1;
 #X obj 112 141 hsl 60 30 0 127 0 0 empty empty subdivition -2 -8 0
-10 -262130 -1 -1 2827 1;
+10 -262130 -1 -1 2927 1;
 #X obj 186 141 hsl 60 30 0 127 0 0 empty empty phase -2 -8 0 10 -262130
--1 -1 900 1;
+-1 -1 0 1;
 #X obj 73 191 bng 30 250 50 0 empty empty wave 0 -8 0 10 -262130 -1
 -1;
 #X obj 112 191 hsl 60 30 0 127 0 0 empty empty subdivition -2 -8 0
-10 -262130 -1 -1 4427 1;
+10 -262130 -1 -1 2927 1;
 #X obj 186 191 hsl 60 30 0 127 0 0 empty empty phase -2 -8 0 10 -262130
 -1 -1 0 1;
 #X obj 73 241 bng 30 250 50 0 empty empty wave 0 -8 0 10 -262130 -1
 -1;
 #X obj 112 241 hsl 60 30 0 127 0 0 empty empty subdivition -2 -8 0
-10 -262130 -1 -1 1427 1;
+10 -262130 -1 -1 2927 1;
 #X obj 186 241 hsl 60 30 0 127 0 0 empty empty phase -2 -8 0 10 -262130
 -1 -1 0 1;
 #X obj 605 465 +~;
@@ -47889,15 +47889,15 @@
 #X obj 545 506 / 127;
 #X obj 514 505 *~;
 #X obj 333 141 hsl 60 30 0 127 0 0 empty empty volume -2 -8 0 10 -191407
--1 -1 3300 1;
+-1 -1 0 1;
 #X obj 547 563 / 127;
 #X obj 516 562 *~;
 #X obj 333 191 hsl 60 30 0 127 0 0 empty empty volume -2 -8 0 10 -191407
--1 -1 2000 1;
+-1 -1 0 1;
 #X obj 544 634 / 127;
 #X obj 513 633 *~;
 #X obj 333 241 hsl 60 30 0 127 0 0 empty empty volume -2 -8 0 10 -191407
--1 -1 1100 1;
+-1 -1 0 1;
 #X text 497 759 channel 2 out;
 #X obj 736 461 +~;
 #X obj 724 601 +~;
@@ -47910,11 +47910,11 @@
 #X obj 676 502 / 127;
 #X obj 645 501 *~;
 #X obj 403 141 hsl 60 30 0 127 0 0 empty empty volume -2 -8 0 10 -228856
--1 -1 1300 1;
+-1 -1 0 1;
 #X obj 678 559 / 127;
 #X obj 647 558 *~;
 #X obj 403 191 hsl 60 30 0 127 0 0 empty empty volume -2 -8 0 10 -228856
--1 -1 2600 1;
+-1 -1 0 1;
 #X obj 675 630 / 127;
 #X obj 644 629 *~;
 #X obj 403 241 hsl 60 30 0 127 0 0 empty empty volume -2 -8 0 10 -228856
@@ -47938,7 +47938,7 @@
 #X obj 808 630 / 127;
 #X obj 777 629 *~;
 #X obj 473 241 hsl 60 30 0 127 0 0 empty empty volume -2 -8 0 10 -191407
--1 -1 3100 1;
+-1 -1 0 1;
 #X text 628 755 channel 3 out;
 #X text 761 755 channel 4 out;
 #X text 353 393 CHANNEL 1;

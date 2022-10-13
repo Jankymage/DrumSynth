@@ -22,17 +22,17 @@
 #X text 354 549 master;
 #X obj 81 511 *~;
 #X obj 41 390 hsl 60 30 0 127 0 0 empty empty Tune -2 -8 0 10 -262144
--1 -1 2000 1;
+-1 -1 0 1;
 #X obj 117 389 hsl 60 30 0 127 0 0 empty empty Mod_Tune -2 -8 0 10
--262144 -1 -1 3200 1;
+-262144 -1 -1 0 1;
 #X obj 207 389 hsl 60 30 0 127 0 0 empty empty Index -2 -8 0 10 -262144
--1 -1 1600 1;
+-1 -1 0 1;
 #X obj 284 390 hsl 60 30 0 127 0 0 empty empty Volume -2 -8 0 10 -204786
--1 -1 1600 1;
+-1 -1 0 1;
 #X obj 269 548 max~ 0;
 #X text 324 577 amps stage;
 #X obj 335 512 hsl 60 30 -1 1.5 0 0 empty empty offset -2 -8 0 10 -262144
--1 -1 2760 1;
+-1 -1 2360 1;
 #X obj 288 522 +~;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-see01 600 float 3;
@@ -122,19 +122,19 @@
 #X obj 23 656 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 22 680 tabwrite~ \$0-see01;
-#X obj 52 634 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 52 634 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 37 435 carrier;
 #X text 123 429 modulator;
 #X text 164 595 index;
 #X obj 47 326 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 9900 1;
+-1 -1 0 1;
 #X obj 305 457 / 127;
 #X obj 288 487 *~;
 #X msg 353 469 0;
 #X obj 357 446 loadbang;
 #X obj 196 326 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6000 1;
+-1 -1 0 1;
 #X obj 209 477 / 127;
 #X obj 193 508 *~;
 #X obj 50 655 metro 100;
@@ -5703,7 +5703,6 @@
 -1 -1;
 #X obj 251 756 tabwrite~ \$0-see02;
 #X obj 293 727 metro 1100;
-#X obj 262 24 LFOSequencer_Mixer-Test01;
 #X text 50 304 amp mod;
 #X text 196 306 index mod;
 #X obj 459 735 +~;
@@ -5738,29 +5737,29 @@
 #X text 778 566 master;
 #X obj 505 528 *~;
 #X obj 465 407 hsl 60 30 0 127 0 0 empty empty Tune -2 -8 0 10 -262144
--1 -1 2700 1;
+-1 -1 0 1;
 #X obj 541 406 hsl 60 30 0 127 0 0 empty empty Mod_Tune -2 -8 0 10
--262144 -1 -1 1700 1;
+-262144 -1 -1 0 1;
 #X obj 631 406 hsl 60 30 0 127 0 0 empty empty Index -2 -8 0 10 -262144
--1 -1 2700 1;
+-1 -1 0 1;
 #X obj 708 407 hsl 60 30 0 127 0 0 empty empty Volume -2 -8 0 10 -204786
 -1 -1 0 1;
 #X obj 693 565 max~ 0;
 #X text 748 594 amps stage;
 #X obj 759 529 hsl 60 30 -1 1.5 0 0 empty empty offset -2 -8 0 10 -262144
--1 -1 2560 1;
+-1 -1 2360 1;
 #X obj 712 539 +~;
 #X text 461 452 carrier;
 #X text 547 446 modulator;
 #X text 588 612 index;
 #X obj 473 347 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1200 1;
+-1 -1 0 1;
 #X obj 729 474 / 127;
 #X obj 712 504 *~;
 #X msg 777 486 0;
 #X obj 781 463 loadbang;
 #X obj 628 347 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 8200 1;
+-1 -1 0 1;
 #X obj 633 494 / 127;
 #X obj 617 525 *~;
 #X text 486 321 amp mod;
@@ -5774,7 +5773,8 @@
 #X obj 682 812 s stop;
 #X obj 575 752 r stop;
 #X obj 125 49 r stop;
-#X connect 2 0 53 0;
+#X obj 262 24 LFOSequencer_Mixer-Test;
+#X connect 2 0 52 0;
 #X connect 3 0 4 0;
 #X connect 3 0 2 1;
 #X connect 5 0 19 0;
@@ -5818,56 +5818,56 @@
 #X connect 45 0 32 0;
 #X connect 47 0 48 0;
 #X connect 49 0 48 0;
-#X connect 50 0 39 0;
-#X connect 50 1 44 0;
-#X connect 50 2 96 0;
-#X connect 50 3 101 0;
-#X connect 53 0 104 0;
-#X connect 55 0 54 0;
+#X connect 52 0 103 0;
+#X connect 54 0 53 0;
+#X connect 56 0 55 0;
 #X connect 57 0 56 0;
-#X connect 58 0 57 0;
-#X connect 60 0 61 0;
-#X connect 61 0 58 0;
-#X connect 63 0 53 1;
-#X connect 64 0 65 0;
-#X connect 64 0 63 1;
-#X connect 66 0 80 0;
-#X connect 67 0 68 0;
-#X connect 67 0 74 0;
-#X connect 68 0 71 1;
-#X connect 69 0 72 0;
-#X connect 70 0 78 0;
-#X connect 71 0 66 0;
-#X connect 72 0 82 0;
-#X connect 75 0 73 0;
-#X connect 75 0 72 1;
-#X connect 76 0 77 0;
-#X connect 77 0 70 0;
-#X connect 77 1 70 1;
-#X connect 78 0 69 0;
-#X connect 78 0 79 0;
-#X connect 80 0 63 0;
-#X connect 82 0 71 0;
-#X connect 83 0 67 0;
-#X connect 83 0 70 0;
-#X connect 84 0 76 0;
-#X connect 85 0 75 0;
-#X connect 86 0 64 0;
-#X connect 87 0 80 1;
-#X connect 89 0 90 1;
-#X connect 90 0 87 0;
-#X connect 94 0 95 0;
-#X connect 95 0 96 1;
-#X connect 96 0 90 0;
-#X connect 97 0 89 0;
-#X connect 98 0 97 0;
-#X connect 99 0 100 0;
-#X connect 100 0 101 1;
-#X connect 101 0 82 1;
-#X connect 104 0 1 1;
-#X connect 104 0 1 0;
-#X connect 105 0 104 1;
-#X connect 106 0 108 0;
-#X connect 107 0 106 0;
-#X connect 109 0 105 0;
-#X connect 110 0 55 0;
+#X connect 59 0 60 0;
+#X connect 60 0 57 0;
+#X connect 62 0 52 1;
+#X connect 63 0 64 0;
+#X connect 63 0 62 1;
+#X connect 65 0 79 0;
+#X connect 66 0 67 0;
+#X connect 66 0 73 0;
+#X connect 67 0 70 1;
+#X connect 68 0 71 0;
+#X connect 69 0 77 0;
+#X connect 70 0 65 0;
+#X connect 71 0 81 0;
+#X connect 74 0 72 0;
+#X connect 74 0 71 1;
+#X connect 75 0 76 0;
+#X connect 76 0 69 0;
+#X connect 76 1 69 1;
+#X connect 77 0 68 0;
+#X connect 77 0 78 0;
+#X connect 79 0 62 0;
+#X connect 81 0 70 0;
+#X connect 82 0 66 0;
+#X connect 82 0 69 0;
+#X connect 83 0 75 0;
+#X connect 84 0 74 0;
+#X connect 85 0 63 0;
+#X connect 86 0 79 1;
+#X connect 88 0 89 1;
+#X connect 89 0 86 0;
+#X connect 93 0 94 0;
+#X connect 94 0 95 1;
+#X connect 95 0 89 0;
+#X connect 96 0 88 0;
+#X connect 97 0 96 0;
+#X connect 98 0 99 0;
+#X connect 99 0 100 1;
+#X connect 100 0 81 1;
+#X connect 103 0 1 1;
+#X connect 103 0 1 0;
+#X connect 104 0 103 1;
+#X connect 105 0 107 0;
+#X connect 106 0 105 0;
+#X connect 108 0 104 0;
+#X connect 109 0 54 0;
+#X connect 110 0 39 0;
+#X connect 110 1 44 0;
+#X connect 110 2 95 0;
+#X connect 110 3 100 0;

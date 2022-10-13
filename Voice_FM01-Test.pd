@@ -22,13 +22,13 @@
 #X text 387 537 master;
 #X obj 89 248 *~;
 #X obj 44 63 hsl 60 30 0 127 0 0 empty empty Tune -2 -8 0 10 -262144
--1 -1 2000 1;
+-1 -1 0 1;
 #X obj 134 63 hsl 60 30 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 44 123 hsl 60 30 0 127 0 0 empty empty Mod_Tune -2 -8 0 10 -262144
--1 -1 3200 1;
+-1 -1 0 1;
 #X obj 134 123 hsl 60 30 0 127 0 0 empty empty Index -2 -8 0 10 -262144
--1 -1 1600 1;
+-1 -1 0 1;
 #X obj 224 63 hsl 60 30 0 127 0 0 empty empty LFO1_Vol -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 314 63 hsl 60 30 0 127 0 0 empty empty LFO2_Vol -2 -8 0 10 -262144
@@ -40,7 +40,7 @@
 #X obj 302 536 max~ 0;
 #X text 329 635 amps stage;
 #X obj 368 500 hsl 60 30 -1 1.5 0 0 empty empty offset -2 -8 0 10 -262144
--1 -1 2760 1;
+-1 -1 2360 1;
 #X obj 321 510 +~;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-see01 600 float 3;
@@ -129,20 +129,20 @@
 #X obj 23 596 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 23 616 tabwrite~ \$0-see01;
-#X obj 53 570 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 53 570 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 553 26 LFO mixer;
 #X text 45 172 carrier;
 #X text 131 166 modulator;
 #X text 172 332 index;
 #X obj 362 435 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 9900 1;
+-1 -1 0 1;
 #X obj 359 455 / 127;
 #X obj 324 440 *~;
 #X msg 442 483 0;
 #X obj 446 460 loadbang;
 #X obj 338 209 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6000 1;
+-1 -1 0 1;
 #X obj 335 229 / 127;
 #X obj 319 260 *~;
 #X obj 51 591 metro 100;
@@ -5711,7 +5711,6 @@
 -1 -1;
 #X obj 252 692 tabwrite~ \$0-see02;
 #X obj 294 663 metro 1100;
-#X obj 539 51 LFOSequencer_Mixer-Test01;
 #X text 375 409 amp mod;
 #X text 343 189 index mod;
 #X obj 593 673 +~;
@@ -5724,7 +5723,8 @@
 #X text 800 367 bpm to milliseconds;
 #X obj 859 347 loadbang;
 #X msg 823 349 84;
-#X connect 2 0 58 0;
+#X obj 539 51 LFOSequencer_Mixer-Test;
+#X connect 2 0 57 0;
 #X connect 3 0 4 0;
 #X connect 3 0 2 1;
 #X connect 5 0 19 0;
@@ -5768,12 +5768,12 @@
 #X connect 50 0 36 0;
 #X connect 52 0 53 0;
 #X connect 54 0 53 0;
-#X connect 55 0 44 0;
-#X connect 55 1 49 0;
-#X connect 58 0 1 0;
-#X connect 58 0 1 1;
-#X connect 60 0 59 0;
+#X connect 57 0 1 0;
+#X connect 57 0 1 1;
+#X connect 59 0 58 0;
+#X connect 61 0 60 0;
 #X connect 62 0 61 0;
-#X connect 63 0 62 0;
-#X connect 65 0 66 0;
-#X connect 66 0 63 0;
+#X connect 64 0 65 0;
+#X connect 65 0 62 0;
+#X connect 66 0 44 0;
+#X connect 66 1 49 0;
