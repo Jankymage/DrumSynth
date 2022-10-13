@@ -1,3 +1,3 @@
-meer subdivitions
+mixer on graph
 
 per matrix mixer > output VCAed by other matrix mixer or channel
