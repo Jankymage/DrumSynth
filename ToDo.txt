@@ -1,2 +1,24 @@
 
+
+
+
+
+custom snappy lfos > with phase 0, start at 1 for amp modulation
+-make amp mod less clicky
+
+
+square wave lfo with pulse mod for trigger envelope
+
+
 per matrix mixer > output VCAed by other matrix mixer or channel
+
+
+make lfo mixer out > trigger gate out = if value is above offset output 1, else 0 
+https://www.youtube.com/watch?v=f2s3mAqLjkg&t=2s
+
+--------SYNTH VOICES--------
+
+make physical modeling voice:
+https://www.youtube.com/watch?v=5rVveOpGsWo
+
+Wavetable synth?
