@@ -20,13 +20,13 @@
 #X text 387 567 master;
 #X obj 81 459 *~;
 #X obj 33 329 hsl 60 30 0 127 0 0 empty empty Tune -2 -8 0 10 -262144
--1 -1 2600 1;
+-1 -1 2800 1;
 #X obj 203 327 hsl 60 30 0 127 0 0 empty empty Mod_Tune -2 -8 0 10
--262144 -1 -1 2400 1;
+-262144 -1 -1 0 1;
 #X obj 116 333 hsl 60 30 0 127 0 0 empty empty Index -2 -8 0 10 -262144
--1 -1 4200 1;
+-1 -1 0 1;
 #X obj 287 327 hsl 60 30 0 127 0 0 empty empty Volume -2 -8 0 10 -260097
--1 -1 3400 1;
+-1 -1 5100 1;
 #X obj 302 536 max~ 0;
 #X text 304 632 amps stage;
 #X obj 368 530 hsl 60 30 -1 1.5 0 0 empty empty offset -2 -8 0 10 -262144
@@ -122,18 +122,18 @@
 #X obj 23 596 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 23 616 tabwrite~ \$0-see01;
-#X obj 53 570 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 53 570 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 37 383 carrier;
 #X text 123 377 modulator;
 #X text 164 543 index;
 #X obj 362 465 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1700 1;
+-1 -1 1500 1;
 #X obj 320 479 *~;
 #X msg 447 540 0;
 #X obj 451 517 loadbang;
 #X obj 228 388 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 7800 1;
+-1 -1 0 1;
 #X obj 225 408 / 127;
 #X obj 209 439 *~;
 #X obj 51 591 metro 100;
@@ -5840,7 +5840,7 @@
 #X text 233 368 index mod;
 #X obj 440 434 s StartStop;
 #X obj 443 369 tgl 50 0 empty empty start/stop -12 -8 0 13 -260097
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 372 362 s BPM;
 #X obj 372 331 expr 1000 / ($f1 / 60);
 #X floatatom 372 287 5 0 0 0 - - -;
@@ -5850,13 +5850,13 @@
 #X obj 28 24 LFOSequencer_Mixer-Test;
 #X obj 412 715 lop~ 5000;
 #X obj 421 651 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 8400 1;
+-1 -1 0 1;
 #X obj 418 671 mtof;
 #X floatatom 418 695 5 0 0 0 - - -;
 #X obj 359 485 / 400;
 #X obj 347 602 / 70;
 #X obj 438 585 r StartStop;
-#X obj 438 609 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 438 609 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 384 646 *~;
 #X connect 2 0 66 0;

@@ -1,6 +1,13 @@
 
+GIT branch for testing/making, main for current working
 
 Build filder > make correct name/files
+
+
+LFO stepped/gate out
+
+
+mix output allways 1 to -1
 
 
 ???one big array wavetable for LFOs???
