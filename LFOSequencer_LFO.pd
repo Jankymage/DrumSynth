@@ -1,8 +1,158 @@
-#N canvas 62 119 817 803 12;
-#X text 691 630 LFO out;
+#N canvas 796 116 770 690 12;
+#X text 516 620 LFO out;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array \$0-waveShape 67 float 5;
-#A 0 -0.0980171 0 0.0980171 0.19509 0.290284 0.382683 0.471396 0.55557
+#X array \$0-waveShape 64 float 5;
+#A 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1;
+#X coords 0 1 63 -1 200 140 1;
+#X restore 36 468 graph;
+#X obj 460 620 outlet~;
+#X text 136 626 https://designingsound.org/2013/04/18/pure-data-wavetable-synth-part-6/
+, f 36;
+#X obj 333 567 tabread4~ \$0-waveShape;
+#X obj 344 515 t b;
+#X obj 586 493 delay;
+#X obj 586 517 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 630 493 spigot;
+#X obj 585 353 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 392 537 reading wave shape;
+#X obj 391 319 t b b b f f f;
+#X text 605 516 make it loop/oscillate, f 14;
+#X obj 332 542 vline~;
+#X obj 353 389 int;
+#X obj 390 391 / 64;
+#X obj 431 391 *;
+#X obj 315 391 t b;
+#X obj 332 461 pack f f f f f;
+#X obj 496 387 -;
+#X obj 467 390 t b;
+#X obj 586 421 sel 1;
+#X obj 586 445 t b;
+#X obj 586 469 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 414 212 *;
+#X msg 419 180 1;
+#X msg 458 180 0.5;
+#X obj 462 213 t b;
+#X text 426 155 subdivisions;
+#X obj 414 122 loadbang;
+#X text 579 389 start/stop;
+#X text 396 361 phase shift;
+#X obj 364 361 / 2;
+#X obj 87 42 inlet;
+#X obj 27 42 inlet;
+#X text 23 6 wave select, f 6;
+#X text 77 8 subivition select, f 10;
+#X text 501 8 BPM milli;
+#X obj 168 35 inlet;
+#X text 167 8 phase;
+#X text 223 14 start/stop;
+#X obj 497 32 r BPM;
+#X floatatom 497 56 5 0 0 0 - - -;
+#X floatatom 87 66 5 0 0 0 - - -;
+#X floatatom 168 59 5 0 0 0 - - -;
+#X floatatom 27 66 5 0 0 0 - - -;
+#X obj 226 38 r StartStop;
+#X obj 226 62 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 160 167 5 0 0 0 - - -;
+#X obj 123 189 int;
+#X floatatom 154 193 5 0 0 0 - - -;
+#X obj 197 141 ctlin 1 1;
+#X text 113 121 subivition select, f 10;
+#X msg 72 249 4;
+#X msg 31 249 8;
+#X msg 40 280 6;
+#X msg 78 278 3;
+#X obj 123 164 / 10;
+#X msg 146 247 1;
+#X msg 107 249 2;
+#X msg 183 247 0.5;
+#X msg 148 276 0.75;
+#X msg 114 278 1.5;
+#X obj 45 216 sel 0 1 2 3 4 5 6 7 8 9 10 11 12;
+#X msg 218 245 0.25;
+#X msg 259 246 0.125;
+#X msg 195 276 0.375;
+#X msg 248 278 0.1875;
+#X floatatom 631 175 5 0 0 0 - - -;
+#X obj 593 198 int;
+#X floatatom 624 202 5 0 0 0 - - -;
+#X msg 615 254 1;
+#X msg 545 256 2;
+#X msg 688 254 0.5;
+#X msg 647 253 0.75;
+#X msg 581 255 1.5;
+#X obj 593 222 sel 0 1 2 3 4;
+#X obj 593 173 / 25;
+#X text 593 135 subivition select, f 10;
+#X floatatom 267 451 5 0 0 0 - - -;
+#X obj 368 415 - 1;
+#X obj 47 410 s \$0-waveShape;
+#N canvas 223 134 1108 737 waveSelect 0;
+#X text 990 554 sine;
+#X text 469 191 saw;
+#X text 468 519 triangle;
+#X text 460 375 ramp;
+#X text 1004 221 square 1/4 pulse, f 9;
+#X text 1005 160 square 1/8 pulse, f 9;
+#X text 1012 332 square 3/4 pulse, f 9;
+#X text 1005 390 square 7/8 pulse, f 9;
+#X text 1009 270 square 1/2 pulse, f 9;
+#X obj 181 83 loadbang;
+#X obj 319 73 f;
+#X obj 354 72 + 1;
+#X text 305 20 wave select;
+#X obj 319 122 select 0 1 2 3 4 5 6 7 8, f 56;
+#X obj 63 51 inlet;
+#X text 69 27 bang for select;
+#X obj 429 679 outlet;
+#X text 429 702 msg out for waveShape array;
+#X obj 319 97 mod 9;
+#X msg 35 318 0 -1 -0.96876 -0.93752 -0.90628 -0.87504 -0.8438 -0.81256
+-0.78132 -0.75008 -0.71884 -0.6876 -0.65636 -0.62512 -0.59388 -0.56264
+-0.5314 -0.50016 -0.46892 -0.43768 -0.40644 -0.3752 -0.34396 -0.31272
+-0.28148 -0.25024 -0.219 -0.18776 -0.15652 -0.12528 -0.09404 -0.0628
+-0.03156 -0.000320017 0.03092 0.06216 0.0934 0.12464 0.15588 0.18712
+0.21836 0.2496 0.28084 0.31208 0.34332 0.37456 0.4058 0.43704 0.46828
+0.49952 0.53076 0.562 0.59324 0.62448 0.65572 0.68696 0.7182 0.74944
+0.78068 0.81192 0.84316 0.8744 0.90564 0.93688 1;
+#X msg 37 159 0 1 0.96876 0.93752 0.90628 0.87504 0.8438 0.81256 0.78132
+0.75008 0.71884 0.6876 0.65636 0.62512 0.59388 0.56264 0.5314 0.50016
+0.46892 0.43768 0.40644 0.3752 0.34396 0.31272 0.28148 0.25024 0.219
+0.18776 0.15652 0.12528 0.09404 0.0628 0.03156 0.000320017 -0.03092
+-0.06216 -0.0934 -0.12464 -0.15588 -0.18712 -0.21836 -0.2496 -0.28084
+-0.31208 -0.34332 -0.37456 -0.4058 -0.43704 -0.46828 -0.49952 -0.53076
+-0.562 -0.59324 -0.62448 -0.65572 -0.68696 -0.7182 -0.74944 -0.78068
+-0.81192 -0.84316 -0.8744 -0.90564 -0.93688 -1;
+#X msg 35 487 0 0.06248 0.12496 0.18744 0.24992 0.3124 0.37488 0.43736
+0.49984 0.56232 0.6248 0.68728 0.74976 0.81224 0.87472 0.9372 0.99968
+0.93784 0.87536 0.81288 0.7504 0.68792 0.62544 0.56296 0.50048 0.438
+0.37552 0.31304 0.25056 0.18808 0.1256 0.06312 0.000640035 -0.0618401
+-0.12432 -0.1868 -0.24928 -0.31176 -0.37424 -0.43672 -0.4992 -0.56168
+-0.62416 -0.68664 -0.74912 -0.8116 -0.87408 -0.93656 -0.99904 -0.93848
+-0.876 -0.81352 -0.75104 -0.68856 -0.62608 -0.5636 -0.50112 -0.43864
+-0.37616 -0.31368 -0.2512 -0.18872 -0.12624 -0.06376 -0.05;
+#X msg 543 152 0 1 1 1 1 1 1 1 1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1, f
+63;
+#X msg 544 209 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1, f 63;
+#X msg 544 262 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1, f 63;
+#X msg 549 326 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 -1 -1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1 -1 -1 -1, f 63;
+#X msg 552 385 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 -1 -1
+-1 -1 -1 -1 -1 -1, f 63;
+#X msg 554 482 0 0 0.0980171 0.19509 0.290284 0.382683 0.471396 0.55557
 0.634393 0.707106 0.77301 0.831469 0.881921 0.923879 0.95694 0.980785
 0.995185 1 0.995185 0.980786 0.956941 0.92388 0.881922 0.831471 0.773012
 0.707108 0.634395 0.555572 0.471399 0.382686 0.290287 0.195093 0.0980197
@@ -10,225 +160,142 @@
 -0.634391 -0.707104 -0.773008 -0.831468 -0.88192 -0.923878 -0.956939
 -0.980785 -0.995184 -1 -0.995185 -0.980786 -0.956942 -0.923881 -0.881923
 -0.831472 -0.773013 -0.70711 -0.634397 -0.555574 -0.471401 -0.382688
--0.29029 -0.195095 -0.0980223 -5.30718e-006 0.0980118;
-#X coords 0 1 66 -1 200 140 1;
-#X restore 47 411 graph;
-#X obj 158 593 select 0 1 2 3 4;
-#X msg 158 724 sinesum 64 1;
-#X obj 142 749 s \$0-waveShape;
-#X msg 179 700 sinesum 64 -0.5 -0.25 -0.167 -0.125 -0.062 -0.0331 -0.015
--0.0071, f 67;
-#X msg 201 675 sinesum 64 0.5 0.25 0.167 0.125 0.062 0.0331 0.015 0.007
-;
-#X msg 223 653 sinesum 64 1 0 0.333 0 0.2 0 0.143 0 0.111 0 0.0909
-;
-#X msg 245 630 sinesum 64 0.5 0 -0.0556 0 0.02 0 -0.0102 0 0.00615
-;
-#X obj 84 721 loadbang;
-#X obj 635 630 outlet~;
-#X text 267 745 https://designingsound.org/2013/04/18/pure-data-wavetable-synth-part-6/
-, f 36;
-#X obj 357 586 tabread4~ \$0-waveShape;
-#X obj 368 534 t b;
-#X obj 610 512 delay;
-#X obj 610 536 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 654 512 spigot;
-#X obj 609 372 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X text 416 556 reading wave shape;
-#X obj 415 338 t b b b f f f;
-#X text 629 535 make it loop/oscillate, f 14;
-#X obj 356 561 vline~;
-#X obj 377 408 int;
-#X obj 414 410 / 64;
-#X obj 455 410 *;
-#X obj 339 410 t b;
-#X obj 356 480 pack f f f f f;
-#X obj 378 433 - 1;
-#X obj 524 410 -;
-#X obj 491 409 t b;
-#X msg 356 505 \$2 0 \, 64 \$5 0 \, 0 0 \$5 \, \$3 \$4 \$5;
-#X obj 610 440 sel 1;
-#X obj 610 464 t b;
-#X obj 610 488 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 438 231 *;
-#X msg 443 199 1;
-#X msg 482 199 0.5;
-#X obj 486 232 t b;
-#X text 450 174 subdivisions;
-#X obj 438 141 loadbang;
-#X text 603 408 start/stop;
-#X text 420 380 phase shift;
-#X obj 388 380 / 2;
-#X obj 18 695 f;
-#X obj 53 694 + 1;
-#X obj 18 719 mod 5;
-#X text 4 642 wave select pad;
-#X obj 111 61 inlet;
-#X obj 51 61 inlet;
-#X text 47 25 wave select, f 6;
-#X text 101 27 subivition select, f 10;
-#X text 525 27 BPM milli;
-#X obj 192 54 inlet;
-#X text 191 27 phase;
-#X text 247 33 start/stop;
-#X obj 521 51 r BPM;
-#X floatatom 521 75 5 0 0 0 - - -;
-#X floatatom 111 85 5 0 0 0 - - -;
-#X floatatom 192 78 5 0 0 0 - - -;
-#X floatatom 51 85 5 0 0 0 - - -;
-#X obj 250 57 r StartStop;
-#X obj 250 81 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X floatatom 185 185 5 0 0 0 - - -;
-#X obj 147 208 int;
-#X floatatom 178 212 5 0 0 0 - - -;
-#X obj 221 160 ctlin 1 1;
-#X text 147 124 subivition select, f 10;
-#X obj 83 161 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X msg 96 268 4;
-#X msg 55 268 8;
-#X msg 64 299 6;
-#X msg 102 297 3;
-#X obj 147 183 / 10;
-#X msg 170 266 1;
-#X msg 131 268 2;
-#X msg 207 266 0.5;
-#X msg 172 295 0.75;
-#X msg 138 297 1.5;
-#X obj 69 235 sel 0 1 2 3 4 5 6 7 8 9 10 11 12;
-#X msg 242 264 0.25;
-#X msg 283 265 0.125;
-#X msg 219 295 0.375;
-#X msg 272 297 0.1875;
-#X floatatom 655 194 5 0 0 0 - - -;
-#X obj 617 217 int;
-#X floatatom 648 221 5 0 0 0 - - -;
-#X msg 639 273 1;
-#X msg 569 275 2;
-#X msg 712 273 0.5;
-#X msg 671 272 0.75;
-#X msg 605 274 1.5;
-#X obj 617 241 sel 0 1 2 3 4;
-#X obj 617 192 / 25;
-#X text 617 154 subivition select, f 10;
-#X connect 2 0 3 0;
-#X connect 2 1 5 0;
-#X connect 2 2 6 0;
-#X connect 2 3 7 0;
-#X connect 2 4 8 0;
-#X connect 3 0 4 0;
-#X connect 5 0 4 0;
-#X connect 6 0 4 0;
-#X connect 7 0 4 0;
-#X connect 8 0 4 0;
-#X connect 9 0 3 0;
-#X connect 12 0 10 0;
-#X connect 13 0 16 0;
+-0.29029 -0.195095 -0.0980223;
+#X msg 181 107 0;
+#X obj 666 682 outlet;
+#X text 663 704 f for waveShape nr, f 20;
+#X connect 9 0 28 0;
+#X connect 10 0 11 0;
+#X connect 10 0 18 0;
+#X connect 11 0 10 1;
+#X connect 13 0 20 0;
+#X connect 13 1 19 0;
+#X connect 13 2 22 0;
+#X connect 13 3 23 0;
+#X connect 13 4 24 0;
+#X connect 13 5 25 0;
+#X connect 13 6 26 0;
+#X connect 13 7 21 0;
+#X connect 13 8 27 0;
+#X connect 14 0 10 0;
+#X connect 18 0 13 0;
+#X connect 18 0 29 0;
+#X connect 19 0 16 0;
+#X connect 20 0 16 0;
+#X connect 21 0 16 0;
+#X connect 22 0 16 0;
+#X connect 23 0 16 0;
+#X connect 24 0 16 0;
+#X connect 25 0 16 0;
+#X connect 26 0 16 0;
+#X connect 27 0 16 0;
+#X connect 28 0 10 0;
+#X restore 45 360 pd waveSelect;
+#X text 54 325 wave msg select for waveShape array, f 19;
+#X msg 332 486 \$2 0 \, 64 \$5 0 \, 0 0 \$5 \, \$3 \$4 \$5;
+#X obj 619 621 outlet;
+#X text 614 646 f for waveShape nr, f 20;
+#X connect 4 0 2 0;
+#X connect 5 0 8 0;
+#X connect 6 0 7 0;
+#X connect 6 0 18 0;
+#X connect 8 0 6 0;
+#X connect 9 0 8 1;
+#X connect 9 0 21 0;
+#X connect 11 3 6 1;
+#X connect 11 4 16 0;
+#X connect 11 5 19 0;
+#X connect 13 0 4 0;
 #X connect 14 0 15 0;
-#X connect 14 0 26 0;
-#X connect 16 0 14 0;
-#X connect 17 0 16 1;
-#X connect 17 0 31 0;
-#X connect 19 3 14 1;
-#X connect 19 4 24 0;
-#X connect 19 5 28 0;
-#X connect 21 0 12 0;
+#X connect 14 0 17 0;
+#X connect 14 0 18 1;
+#X connect 14 0 80 0;
+#X connect 15 0 16 1;
+#X connect 16 0 18 3;
+#X connect 16 0 19 1;
+#X connect 16 0 20 0;
+#X connect 17 0 16 0;
+#X connect 18 0 84 0;
+#X connect 19 0 18 4;
+#X connect 20 0 19 0;
+#X connect 21 0 22 0;
 #X connect 22 0 23 0;
-#X connect 22 0 25 0;
-#X connect 22 0 26 1;
-#X connect 22 0 27 0;
-#X connect 23 0 24 1;
-#X connect 24 0 26 3;
-#X connect 24 0 28 1;
-#X connect 24 0 29 0;
-#X connect 25 0 24 0;
-#X connect 26 0 30 0;
-#X connect 27 0 26 2;
-#X connect 28 0 26 4;
-#X connect 29 0 28 0;
-#X connect 30 0 21 0;
-#X connect 30 0 13 0;
-#X connect 31 0 32 0;
-#X connect 32 0 33 0;
-#X connect 32 0 26 0;
+#X connect 22 0 18 0;
+#X connect 22 0 6 0;
+#X connect 24 0 11 0;
+#X connect 25 0 24 1;
+#X connect 25 0 27 0;
+#X connect 26 0 24 1;
+#X connect 26 0 27 0;
+#X connect 27 0 24 0;
+#X connect 29 0 25 0;
 #X connect 32 0 14 0;
-#X connect 34 0 19 0;
-#X connect 35 0 34 1;
-#X connect 35 0 37 0;
-#X connect 36 0 34 1;
-#X connect 36 0 37 0;
-#X connect 37 0 34 0;
-#X connect 39 0 35 0;
-#X connect 42 0 22 0;
-#X connect 43 0 44 0;
-#X connect 43 0 45 0;
-#X connect 44 0 43 1;
-#X connect 45 0 2 0;
-#X connect 47 0 57 0;
-#X connect 47 0 72 0;
-#X connect 48 0 59 0;
-#X connect 48 0 43 0;
-#X connect 52 0 58 0;
-#X connect 52 0 42 0;
-#X connect 55 0 56 0;
-#X connect 55 0 34 0;
-#X connect 60 0 61 0;
-#X connect 60 0 17 0;
-#X connect 63 0 64 0;
-#X connect 63 0 78 0;
-#X connect 65 0 72 0;
-#X connect 67 0 72 0;
-#X connect 68 0 34 1;
-#X connect 68 0 37 0;
-#X connect 69 0 34 1;
-#X connect 69 0 37 0;
-#X connect 70 0 34 1;
-#X connect 70 0 37 0;
-#X connect 71 0 34 1;
-#X connect 71 0 37 0;
-#X connect 72 0 62 0;
-#X connect 72 0 63 0;
-#X connect 73 0 34 1;
-#X connect 73 0 37 0;
-#X connect 74 0 34 1;
-#X connect 74 0 37 0;
-#X connect 75 0 34 1;
-#X connect 75 0 37 0;
-#X connect 76 0 34 1;
-#X connect 76 0 37 0;
-#X connect 77 0 34 1;
-#X connect 77 0 37 0;
-#X connect 78 0 69 0;
-#X connect 78 1 70 0;
-#X connect 78 2 68 0;
-#X connect 78 3 71 0;
-#X connect 78 4 74 0;
-#X connect 78 5 77 0;
-#X connect 78 6 73 0;
-#X connect 78 7 76 0;
-#X connect 78 8 75 0;
-#X connect 78 9 81 0;
-#X connect 78 10 79 0;
-#X connect 78 11 82 0;
-#X connect 78 12 80 0;
-#X connect 79 0 34 1;
-#X connect 79 0 37 0;
-#X connect 80 0 34 1;
-#X connect 80 0 37 0;
-#X connect 81 0 34 1;
-#X connect 81 0 37 0;
-#X connect 82 0 34 1;
-#X connect 82 0 37 0;
-#X connect 84 0 85 0;
-#X connect 84 0 91 0;
-#X connect 91 0 87 0;
-#X connect 91 1 90 0;
-#X connect 91 2 86 0;
-#X connect 91 3 89 0;
-#X connect 91 4 88 0;
-#X connect 92 0 83 0;
-#X connect 92 0 84 0;
+#X connect 33 0 43 0;
+#X connect 33 0 57 0;
+#X connect 34 0 45 0;
+#X connect 34 0 82 0;
+#X connect 38 0 44 0;
+#X connect 38 0 32 0;
+#X connect 41 0 42 0;
+#X connect 41 0 24 0;
+#X connect 46 0 47 0;
+#X connect 46 0 9 0;
+#X connect 49 0 50 0;
+#X connect 49 0 63 0;
+#X connect 51 0 57 0;
+#X connect 53 0 24 1;
+#X connect 53 0 27 0;
+#X connect 54 0 24 1;
+#X connect 54 0 27 0;
+#X connect 55 0 24 1;
+#X connect 55 0 27 0;
+#X connect 56 0 24 1;
+#X connect 56 0 27 0;
+#X connect 57 0 48 0;
+#X connect 57 0 49 0;
+#X connect 58 0 24 1;
+#X connect 58 0 27 0;
+#X connect 59 0 24 1;
+#X connect 59 0 27 0;
+#X connect 60 0 24 1;
+#X connect 60 0 27 0;
+#X connect 61 0 24 1;
+#X connect 61 0 27 0;
+#X connect 62 0 24 1;
+#X connect 62 0 27 0;
+#X connect 63 0 54 0;
+#X connect 63 1 55 0;
+#X connect 63 2 53 0;
+#X connect 63 3 56 0;
+#X connect 63 4 59 0;
+#X connect 63 5 62 0;
+#X connect 63 6 58 0;
+#X connect 63 7 61 0;
+#X connect 63 8 60 0;
+#X connect 63 9 66 0;
+#X connect 63 10 64 0;
+#X connect 63 11 67 0;
+#X connect 63 12 65 0;
+#X connect 64 0 24 1;
+#X connect 64 0 27 0;
+#X connect 65 0 24 1;
+#X connect 65 0 27 0;
+#X connect 66 0 24 1;
+#X connect 66 0 27 0;
+#X connect 67 0 24 1;
+#X connect 67 0 27 0;
+#X connect 69 0 70 0;
+#X connect 69 0 76 0;
+#X connect 76 0 72 0;
+#X connect 76 1 75 0;
+#X connect 76 2 71 0;
+#X connect 76 3 74 0;
+#X connect 76 4 73 0;
+#X connect 77 0 68 0;
+#X connect 77 0 69 0;
+#X connect 80 0 79 0;
+#X connect 80 0 18 2;
+#X connect 82 0 81 0;
+#X connect 82 1 85 0;
+#X connect 84 0 13 0;
+#X connect 84 0 5 0;
