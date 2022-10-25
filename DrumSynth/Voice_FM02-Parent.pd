@@ -1,0 +1,10 @@
+#N canvas 31 233 542 673 12;
+#X obj 16 14 LFOSequencer_MasterControl;
+#X obj 17 634 dac~;
+#X obj 17 389 Voice_FM02;
+#X obj 16 109 LFOSequencer_Mixer;
+#X connect 2 0 1 0;
+#X connect 2 0 1 1;
+#X connect 3 0 2 0;
+#X connect 3 2 2 1;
+#X connect 3 4 2 2;

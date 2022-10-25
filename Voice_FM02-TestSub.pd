@@ -1,0 +1,93 @@
+#N canvas 454 78 1156 836 12;
+#X text 283 277 basic 2 operator FM;
+#X obj 35 70 hsl 60 30 0 127 0 0 empty empty car_freq -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 115 70 hsl 60 30 0 127 0 0 empty empty Volume -2 -8 0 10 -260097
+-1 -1 0 1;
+#X obj 115 120 hsl 60 30 0 127 0 0 empty empty amp_offset -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 476 425 lop~ 5000;
+#X obj 115 170 hsl 60 30 0 127 0 0 empty empty LPF_cutoff -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 478 399 mtof;
+#X obj 360 480 r StartStop;
+#X obj 147 220 tgl 30 0 empty empty mute 0 -7 0 11 -260097 -1 -1 0
+1;
+#X obj 320 564 *~;
+#X obj 56 492 osc~;
+#X text 93 491 modulator;
+#X obj 56 516 *~;
+#X obj 56 540 +~;
+#X obj 56 564 osc~;
+#X obj 320 535 *~;
+#X obj 358 509 expr $f1 / 200;
+#X obj 35 170 hsl 60 30 0 127 0 0 empty empty mod_freq -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 95 564 carrier;
+#X obj 35 120 hsl 60 30 0 127 0 0 empty empty index_mod -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 180 531 expr $f1 * 20;
+#X obj 181 554 expr~ ($v1 * $v2) + $v2, f 12;
+#X obj 320 432 +~;
+#X obj 320 456 max~ 0;
+#X obj 320 392 expr ($f1 / 63) - 1, f 9;
+#X obj 320 505 *~;
+#X obj 320 480 /~ 2;
+#X obj 35 220 hsl 60 30 0 127 0 0 empty empty tune_mod -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 197 447 *~;
+#X obj 53 405 +~;
+#X obj 126 402 +~;
+#X obj 52 429 mtof~;
+#X obj 126 427 mtof~;
+#X obj 199 398 expr $f1 / 10;
+#X obj 199 422 int;
+#X obj 122 353 inlet~;
+#X obj 52 353 inlet~;
+#X obj 192 353 inlet~;
+#X text 56 331 Amp;
+#X text 122 331 index;
+#X text 196 331 tune;
+#X obj 477 469 outlet~;
+#X text 481 493 audio;
+#X text 319 367 amp;
+#X text 25 38 ^Amp;
+#X text 81 38 ^index;
+#X text 145 38 ^tune;
+#X connect 1 0 29 1;
+#X connect 2 0 16 0;
+#X connect 3 0 24 0;
+#X connect 4 0 41 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 1;
+#X connect 7 0 8 0;
+#X connect 8 0 9 1;
+#X connect 9 0 4 0;
+#X connect 10 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 25 0;
+#X connect 15 0 9 0;
+#X connect 16 0 15 1;
+#X connect 17 0 30 1;
+#X connect 19 0 20 0;
+#X connect 20 0 21 1;
+#X connect 21 0 12 1;
+#X connect 22 0 23 0;
+#X connect 23 0 26 0;
+#X connect 24 0 22 1;
+#X connect 25 0 15 0;
+#X connect 26 0 25 1;
+#X connect 27 0 33 0;
+#X connect 28 0 29 0;
+#X connect 28 0 30 0;
+#X connect 29 0 31 0;
+#X connect 30 0 32 0;
+#X connect 31 0 13 1;
+#X connect 32 0 10 0;
+#X connect 33 0 34 0;
+#X connect 34 0 28 1;
+#X connect 35 0 21 0;
+#X connect 36 0 22 0;
+#X connect 37 0 28 0;
+#X coords 0 -1 1 1 170 240 1 20 20;
