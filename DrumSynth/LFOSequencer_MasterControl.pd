@@ -1,10 +1,10 @@
 #N canvas 846 343 450 300 12;
 #X obj 28 160 s StartStop;
 #X obj 28 53 tgl 50 0 empty empty start/stop -12 -8 0 13 -260097 -1
--1 0 1;
+-1 1 1;
 #X obj 122 160 s BPM;
 #X obj 122 129 expr 1000 / ($f1 / 60);
-#X floatatom 88 85 5 0 0 2 BPM - -;
+#X floatatom 88 85 5 1 666 2 BPM - -;
 #X text 144 104 bpm to milliseconds;
 #X obj 203 84 loadbang;
 #X msg 167 86 84;

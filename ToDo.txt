@@ -1,32 +1,17 @@
 
 GIT branch for testing/making, main for current working
 
-Build filder > make correct name/files
 
-
-LFO stepped/gate out
-
-
-mix output allways 1 to -1
 
 
 ???one big array wavetable for LFOs???
 
 
-custom snappy lfos > 
--make amp mod less clicky > edit LFO msg's with smoother atack/decay 
------ OR -----
-lower amp modulation and higher volume > tweak numbers
-
-
-square wave lfo with pulse mod for trigger envelope
 
 
 per matrix mixer > output VCAed by other matrix mixer or channel
 
 
-make lfo mixer out > trigger gate out = if value is above offset output 1, else 0 
-https://www.youtube.com/watch?v=f2s3mAqLjkg&t=2s
 
 --------SYNTH VOICES--------
 
@@ -35,7 +20,7 @@ https://www.youtube.com/watch?v=5rVveOpGsWo
 
 Wavetable synth?
 
-Remake FM > error somewhere and 2 more mod destinations? :)
+basic subtractive synth voice
 
 ----------FX-----------
 
