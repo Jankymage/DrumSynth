@@ -4,7 +4,7 @@
 -1 0 1;
 #X obj 122 160 s BPM;
 #X obj 122 129 expr 1000 / ($f1 / 60);
-#X floatatom 88 85 5 0 0 2 BPM - -;
+#X floatatom 88 85 5 1 666 2 BPM - -;
 #X text 144 104 bpm to milliseconds;
 #X obj 203 84 loadbang;
 #X msg 167 86 84;
