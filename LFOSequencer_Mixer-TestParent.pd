@@ -1,3 +1,10 @@
-#N canvas 31 233 542 404 12;
-#X obj 16 109 LFOSequencer_Mixer-Test;
+#N canvas 31 233 542 685 12;
 #X obj 16 14 LFOSequencer_MasterControl;
+#X obj 16 109 LFOSequencer_Mixer-Test01Subpatches;
+#X obj 16 403 Voice_FM02-TestSub;
+#X obj 16 648 dac~;
+#X connect 1 0 2 0;
+#X connect 1 2 2 1;
+#X connect 1 4 2 2;
+#X connect 2 0 3 0;
+#X connect 2 0 3 1;
